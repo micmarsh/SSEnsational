@@ -3,6 +3,11 @@
             [ssensational.util.aes :as aes]
             [ssensational.util :refer (with-index)]))
 
+;; Instead of trying to translate the sometimes confusing symbols in
+;; the paper one-to-one, here I'll attempt to implment my own SSE
+;; scheme based on the general impressions I've gleaned from my reading so far.
+
+
 (defn encrypt [key text]
   (aes/encrypt 128 text key))
 
@@ -22,6 +27,8 @@
 ;; As you were writing the below, you realized that "apply merge"
 ;; wouldn't jive with a bunch of identical encrypted words (plus
 ;; frequency analysis vulnerability), so the "j" was added.
+;;
+;; Possible
 
 
 (defn encrypt-it-all [key texts]
